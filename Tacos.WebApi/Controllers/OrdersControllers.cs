@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Tacos.WebApi.Controllers.In;
+using Tacos.WebApi.Controllers.Out;
 
 namespace Tacos.WebApi.Controllers
 {
@@ -15,9 +17,15 @@ namespace Tacos.WebApi.Controllers
 
         //api/orders/2
         [HttpGet("{id}")]
-        public IActionResult GetById([FromRoute] int id)
+        public IActionResult Get([FromRoute] int id)
         {
-            return Ok();
+            return Ok(new OrderBasicInfoModel()
+            {
+                Id = 1,
+                Table = 2
+
+            }
+            );
         }
 
         //api/orders?day='2022-08-10'
@@ -29,7 +37,7 @@ namespace Tacos.WebApi.Controllers
 
         //api/orders
         [HttpPost]
-        public IActionResult CreateOrder([FromBody] OrderModel order)
+        public IActionResult CreateOrder([FromBody] OrderIntentModel order)
         {
             return Ok();
         }
