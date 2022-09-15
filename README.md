@@ -1,2 +1,2 @@
 # tacos
-Primera clase de tecnologías de DA2
+Proyecto realizado en clase de tecnologías de DA2
